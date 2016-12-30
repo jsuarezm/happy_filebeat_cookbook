@@ -8,6 +8,14 @@ filebeat.prospectors:
   paths:
     - /var/log/messages
     - /var/log/secure
+  tags: ["log_system"]
+
+- input_type: log
+  paths:
+   - /srv/www/happybackend/current/log/happylog_staging.log
+  json.message_key: event
+  tags: ["json"]
+
 
 #================================ General =====================================
 
