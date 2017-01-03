@@ -12,7 +12,7 @@ filebeat.prospectors:
 
 - input_type: log
   paths:
-   - /srv/www/happybackend/current/log/happylog_staging.log
+   - /srv/www/happybackend/current/log/happylog_<%= @elastic_env%>.log
   json.message_key: event
   tags: ["json"]
 

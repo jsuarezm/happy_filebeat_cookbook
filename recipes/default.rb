@@ -38,6 +38,7 @@ template '/etc/filebeat/filebeat.yml' do
   owner 'root'
   group 'root'
   variables({
+    elastic_env: node['filebeat']['environment'],
     elastic_url: node['filebeat']['elastic']['url'],
     elastic_user: node['filebeat']['elastic']['user'],
     elastic_pass: node['filebeat']['elastic']['pass']

@@ -17,6 +17,7 @@ suites:
       - recipe[happy_filebeat_cookbook::default]
     attributes:
       filebeat:
+        environment: "staging1"
         elastic:
           url: "https://0129136b2db263670ea80e2e2ec86757.us-east-1.aws.found.io:9243"
           user: "prometeo"
