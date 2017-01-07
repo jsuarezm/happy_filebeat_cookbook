@@ -13,7 +13,9 @@ filebeat.prospectors:
 - input_type: log
   paths:
    - /srv/www/happybackend/current/log/happylog_<%= @elastic_env%>.log
-  json.message_key: event
+  json.keys_under_root: true
+  json.overwrite_keys: true
+  json.add_error_key: true
   tags: ["json"]
 
 
@@ -33,6 +35,7 @@ output.elasticsearch:
   template.name: filebeat
   template.path: filebeat.template.json
   template.overwrite: false
+  index: "<%= @elastic_env%>-"
 
 #================================ Logging =====================================
 
