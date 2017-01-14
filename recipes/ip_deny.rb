@@ -7,7 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-template '/etc/httpd/sites-available/ip_deny.conf' do
+template '/etc/httpd/sites-available/000-ip_deny.conf' do
   source 'ip_deny.conf.erb'
   mode '0440'
   owner 'root'
