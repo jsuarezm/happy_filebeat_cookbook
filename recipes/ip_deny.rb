@@ -19,10 +19,10 @@ template '/etc/httpd/sites-available/000-ip_deny.conf' do
   })
 end
 
-link '/etc/httpd/sites-enabled/ip_deny.conf' do
-  to '/etc/httpd/sites-available/ip_deny.conf'
-  only_if 'test -f /etc/httpd/sites-available/ip_deny.conf'
-  not_if 'test -F /etc/httpd/sites-enabled/ip_deny.conf'
+link '/etc/httpd/sites-enabled/000-ip_deny.conf' do
+  to '/etc/httpd/sites-available/000-ip_deny.conf'
+  only_if 'test -f /etc/httpd/sites-available/000-ip_deny.conf'
+  not_if 'test -F /etc/httpd/sites-enabled/000-ip_deny.conf'
 end
 
 service 'httpd' do
