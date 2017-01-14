@@ -1,0 +1,22 @@
+<VirtualHost *:80>
+    ServerName catchall
+    <Location />
+        Order allow,deny
+        Deny from all
+    </Location>
+</VirtualHost>
+
+<VirtualHost *:443>
+    ServerName catchall
+    SSLEngine on
+  SSLProxyEngine on
+  SSLCertificateFile <%= @cert_path%> 
+  SSLCertificateKeyFile <%= @key_path%> 
+  SSLCACertificateFile <%= @cacert_path%>
+  SetEnvIf User-Agent ".*MSIE.*" nokeepalive ssl-unclean-shutdown downgrade-1.0 force-response-1.0
+    <Location />
+        Order allow,deny
+        Deny from all
+    </Location>
+</VirtualHost>
+
