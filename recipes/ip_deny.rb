@@ -13,6 +13,7 @@ template '/etc/httpd/sites-available/000-ip_deny.conf' do
   owner 'root'
   group 'root'
   variables({
+    tls: node['vhost']['tls'],
     cert_path: node['vhost']['cert'],
     key_path: node['vhost']['key'],
     cacert_path: node['vhost']['cacert']
