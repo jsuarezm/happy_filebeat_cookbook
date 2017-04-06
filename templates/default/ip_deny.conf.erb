@@ -6,7 +6,7 @@
     </Location>
 </VirtualHost>
 
-<% if default['vhost']['tls'] %>
+<% if @tls %>
 <VirtualHost *:443>
     ServerName catchall
     SSLEngine on
