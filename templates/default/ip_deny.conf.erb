@@ -6,6 +6,7 @@
     </Location>
 </VirtualHost>
 
+<% if node['vhost']['tls'] %>
 <VirtualHost *:443>
     ServerName catchall
     SSLEngine on
@@ -19,4 +20,4 @@
         Deny from all
     </Location>
 </VirtualHost>
-
+<% end %>
